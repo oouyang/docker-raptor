@@ -1,0 +1,29 @@
+#! /bin/bash
+
+DIR=`dirname $0`
+CONTAINER=$DIR/.container
+
+if [[ $1 == "build" ]]; then
+  docker build -t eliperelman/raptor $DIR
+elif [[ $1 == "clean-build" ]]; then
+  docker build -no-cache -t eliperelman/raptor $DIR
+elif [[ $1 == "run" ]]; then
+  if [[ -e "$CONTAINER" ]]; then
+    docker start $(cat $CONTAINER)
+  else
+    RAPTOR_CONTAINER=$(docker run -d -p 8080:8080 -p 8083:8083 -p 8086:8086 --expose 8090 --expose 8099 eliperelman/raptor:latest)
+    RAPTOR_CONTAINER=${RAPTOR_CONTAINER:0:12}
+    echo -n "$RAPTOR_CONTAINER" > $CONTAINER
+  fi
+  echo "Raptor started, use \`raptor stop\` to stop."
+elif [[ $1 == "shell" ]]; then
+  docker exec -it $(cat $CONTAINER) bash
+elif [[ $1 == "stop" ]]; then
+  echo "Raptor container $(docker stop $(cat $CONTAINER)) stopped"
+elif [[ $1 == "remove" ]]; then
+  docker rm $(cat $CONTAINER)
+  rm $CONTAINER
+  echo "Raptor container removed"
+elif [[ $1 == "push" ]]; then
+  docker push eliperelman/raptor
+fi

@@ -1,0 +1,1100 @@
+{
+  "id": null,
+  "title": "Memory",
+  "originalTitle": "Memory",
+  "tags": [],
+  "style": "dark",
+  "timezone": "browser",
+  "editable": true,
+  "hideControls": false,
+  "sharedCrosshair": false,
+  "rows": [
+    {
+      "title": "Row1",
+      "height": "250px",
+      "editable": true,
+      "collapse": false,
+      "panels": [
+        {
+          "title": "Camera",
+          "error": false,
+          "span": 4,
+          "editable": true,
+          "type": "graph",
+          "id": 1,
+          "datasource": null,
+          "renderer": "flot",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "none",
+            "none"
+          ],
+          "grid": {
+            "leftMax": null,
+            "rightMax": null,
+            "leftMin": 0,
+            "rightMin": null,
+            "threshold1": null,
+            "threshold2": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "lines": true,
+          "fill": 1,
+          "linewidth": 2,
+          "points": false,
+          "pointradius": 2,
+          "bars": false,
+          "stack": false,
+          "percentage": false,
+          "legend": {
+            "show": true,
+            "values": false,
+            "min": false,
+            "max": false,
+            "current": false,
+            "total": false,
+            "avg": false
+          },
+          "nullPointMode": "connected",
+          "steppedLine": false,
+          "tooltip": {
+            "value_type": "cumulative",
+            "shared": false
+          },
+          "targets": [
+            {
+              "function": "mean",
+              "column": "uss",
+              "series": "Suites.Memory.Camera.fullyLoadedMemory",
+              "query": "select mean(uss) from \"Suites.Memory.Camera.fullyLoadedMemory\" where $timeFilter group by time($interval) order asc",
+              "alias": "USS"
+            },
+            {
+              "function": "mean",
+              "column": "pss",
+              "series": "Suites.Memory.Camera.fullyLoadedMemory",
+              "query": "select mean(pss) from \"Suites.Memory.Camera.fullyLoadedMemory\" where $timeFilter group by time($interval) order asc",
+              "alias": "PSS"
+            },
+            {
+              "function": "mean",
+              "column": "rss",
+              "series": "Suites.Memory.Camera.fullyLoadedMemory",
+              "query": "select mean(rss) from \"Suites.Memory.Camera.fullyLoadedMemory\" where $timeFilter group by time($interval) order asc",
+              "alias": "RSS"
+            }
+          ],
+          "aliasColors": {},
+          "seriesOverrides": [],
+          "links": [],
+          "height": "300px",
+          "leftYAxisLabel": "MB"
+        },
+        {
+          "title": "Calendar",
+          "error": false,
+          "span": 4,
+          "editable": true,
+          "type": "graph",
+          "id": 2,
+          "datasource": null,
+          "renderer": "flot",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "none",
+            "none"
+          ],
+          "grid": {
+            "leftMax": null,
+            "rightMax": null,
+            "leftMin": 0,
+            "rightMin": null,
+            "threshold1": null,
+            "threshold2": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "lines": true,
+          "fill": 1,
+          "linewidth": 2,
+          "points": false,
+          "pointradius": 2,
+          "bars": false,
+          "stack": false,
+          "percentage": false,
+          "legend": {
+            "show": true,
+            "values": false,
+            "min": false,
+            "max": false,
+            "current": false,
+            "total": false,
+            "avg": false
+          },
+          "nullPointMode": "connected",
+          "steppedLine": false,
+          "tooltip": {
+            "value_type": "cumulative",
+            "shared": false
+          },
+          "targets": [
+            {
+              "function": "mean",
+              "column": "uss",
+              "series": "Suites.Memory.Calendar.fullyLoadedMemory",
+              "query": "select mean(uss) from \"Suites.Memory.Calendar.fullyLoadedMemory\" where $timeFilter group by time($interval) order asc",
+              "alias": "USS"
+            },
+            {
+              "function": "mean",
+              "column": "pss",
+              "series": "Suites.Memory.Calendar.fullyLoadedMemory",
+              "query": "select mean(pss) from \"Suites.Memory.Calendar.fullyLoadedMemory\" where $timeFilter group by time($interval) order asc",
+              "alias": "PSS"
+            },
+            {
+              "function": "mean",
+              "column": "rss",
+              "series": "Suites.Memory.Calendar.fullyLoadedMemory",
+              "query": "select mean(rss) from \"Suites.Memory.Calendar.fullyLoadedMemory\" where $timeFilter group by time($interval) order asc",
+              "alias": "PSS"
+            }
+          ],
+          "aliasColors": {},
+          "seriesOverrides": [],
+          "links": [],
+          "height": "300px",
+          "leftYAxisLabel": "MB"
+        },
+        {
+          "title": "Clock",
+          "error": false,
+          "span": 4,
+          "editable": true,
+          "type": "graph",
+          "id": 3,
+          "datasource": null,
+          "renderer": "flot",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "none",
+            "none"
+          ],
+          "grid": {
+            "leftMax": null,
+            "rightMax": null,
+            "leftMin": 0,
+            "rightMin": null,
+            "threshold1": null,
+            "threshold2": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "lines": true,
+          "fill": 1,
+          "linewidth": 2,
+          "points": false,
+          "pointradius": 2,
+          "bars": false,
+          "stack": false,
+          "percentage": false,
+          "legend": {
+            "show": true,
+            "values": false,
+            "min": false,
+            "max": false,
+            "current": false,
+            "total": false,
+            "avg": false
+          },
+          "nullPointMode": "connected",
+          "steppedLine": false,
+          "tooltip": {
+            "value_type": "cumulative",
+            "shared": false
+          },
+          "targets": [
+            {
+              "function": "mean",
+              "column": "uss",
+              "series": "Suites.Memory.Clock.fullyLoadedMemory",
+              "query": "select mean(uss) from \"Suites.Memory.Clock.fullyLoadedMemory\" where $timeFilter group by time($interval) order asc",
+              "alias": "USS"
+            },
+            {
+              "function": "mean",
+              "column": "pss",
+              "series": "Suites.Memory.Clock.fullyLoadedMemory",
+              "query": "select mean(pss) from \"Suites.Memory.Clock.fullyLoadedMemory\" where $timeFilter group by time($interval) order asc",
+              "alias": "PSS"
+            },
+            {
+              "function": "mean",
+              "column": "rss",
+              "series": "Suites.Memory.Clock.fullyLoadedMemory",
+              "query": "select mean(rss) from \"Suites.Memory.Clock.fullyLoadedMemory\" where $timeFilter group by time($interval) order asc",
+              "alias": "PSS"
+            }
+          ],
+          "aliasColors": {},
+          "seriesOverrides": [],
+          "links": [],
+          "height": "300px",
+          "leftYAxisLabel": "MB"
+        }
+      ]
+    },
+    {
+      "title": "Row1",
+      "height": "250px",
+      "editable": true,
+      "collapse": false,
+      "panels": [
+        {
+          "title": "Contacts",
+          "error": false,
+          "span": 4,
+          "editable": true,
+          "type": "graph",
+          "id": 4,
+          "datasource": null,
+          "renderer": "flot",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "none",
+            "none"
+          ],
+          "grid": {
+            "leftMax": null,
+            "rightMax": null,
+            "leftMin": 0,
+            "rightMin": null,
+            "threshold1": null,
+            "threshold2": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "lines": true,
+          "fill": 1,
+          "linewidth": 2,
+          "points": false,
+          "pointradius": 2,
+          "bars": false,
+          "stack": false,
+          "percentage": false,
+          "legend": {
+            "show": true,
+            "values": false,
+            "min": false,
+            "max": false,
+            "current": false,
+            "total": false,
+            "avg": false
+          },
+          "nullPointMode": "connected",
+          "steppedLine": false,
+          "tooltip": {
+            "value_type": "cumulative",
+            "shared": false
+          },
+          "targets": [
+            {
+              "function": "mean",
+              "column": "uss",
+              "series": "Suites.Memory.Contacts.fullyLoadedMemory",
+              "query": "select mean(uss) from \"Suites.Memory.Contacts.fullyLoadedMemory\" where $timeFilter group by time($interval) order asc",
+              "alias": "USS"
+            },
+            {
+              "function": "mean",
+              "column": "pss",
+              "series": "Suites.Memory.Contacts.fullyLoadedMemory",
+              "query": "select mean(pss) from \"Suites.Memory.Contacts.fullyLoadedMemory\" where $timeFilter group by time($interval) order asc",
+              "alias": "PSS"
+            },
+            {
+              "function": "mean",
+              "column": "rss",
+              "series": "Suites.Memory.Contacts.fullyLoadedMemory",
+              "query": "select mean(rss) from \"Suites.Memory.Contacts.fullyLoadedMemory\" where $timeFilter group by time($interval) order asc",
+              "alias": "PSS"
+            }
+          ],
+          "aliasColors": {},
+          "seriesOverrides": [],
+          "links": [],
+          "height": "300px",
+          "leftYAxisLabel": "MB"
+        },
+        {
+          "title": "E-Mail",
+          "error": false,
+          "span": 4,
+          "editable": true,
+          "type": "graph",
+          "id": 5,
+          "datasource": null,
+          "renderer": "flot",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "none",
+            "none"
+          ],
+          "grid": {
+            "leftMax": null,
+            "rightMax": null,
+            "leftMin": 0,
+            "rightMin": null,
+            "threshold1": null,
+            "threshold2": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "lines": true,
+          "fill": 1,
+          "linewidth": 2,
+          "points": false,
+          "pointradius": 2,
+          "bars": false,
+          "stack": false,
+          "percentage": false,
+          "legend": {
+            "show": true,
+            "values": false,
+            "min": false,
+            "max": false,
+            "current": false,
+            "total": false,
+            "avg": false
+          },
+          "nullPointMode": "connected",
+          "steppedLine": false,
+          "tooltip": {
+            "value_type": "cumulative",
+            "shared": false
+          },
+          "targets": [
+            {
+              "function": "mean",
+              "column": "uss",
+              "series": "Suites.Memory.E-Mail.fullyLoadedMemory",
+              "query": "select mean(uss) from \"Suites.Memory.E-Mail.fullyLoadedMemory\" where $timeFilter group by time($interval) order asc",
+              "alias": "USS"
+            },
+            {
+              "function": "mean",
+              "column": "pss",
+              "series": "Suites.Memory.E-Mail.fullyLoadedMemory",
+              "query": "select mean(pss) from \"Suites.Memory.E-Mail.fullyLoadedMemory\" where $timeFilter group by time($interval) order asc",
+              "alias": "PSS"
+            },
+            {
+              "function": "mean",
+              "column": "rss",
+              "series": "Suites.Memory.E-Mail.fullyLoadedMemory",
+              "query": "select mean(rss) from \"Suites.Memory.E-Mail.fullyLoadedMemory\" where $timeFilter group by time($interval) order asc",
+              "alias": "PSS"
+            }
+          ],
+          "aliasColors": {},
+          "seriesOverrides": [],
+          "links": [],
+          "height": "300px",
+          "leftYAxisLabel": "MB"
+        },
+        {
+          "title": "FM Radio",
+          "error": false,
+          "span": 4,
+          "editable": true,
+          "type": "graph",
+          "id": 6,
+          "datasource": null,
+          "renderer": "flot",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "none",
+            "none"
+          ],
+          "grid": {
+            "leftMax": null,
+            "rightMax": null,
+            "leftMin": 0,
+            "rightMin": null,
+            "threshold1": null,
+            "threshold2": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "lines": true,
+          "fill": 1,
+          "linewidth": 2,
+          "points": false,
+          "pointradius": 2,
+          "bars": false,
+          "stack": false,
+          "percentage": false,
+          "legend": {
+            "show": true,
+            "values": false,
+            "min": false,
+            "max": false,
+            "current": false,
+            "total": false,
+            "avg": false
+          },
+          "nullPointMode": "connected",
+          "steppedLine": false,
+          "tooltip": {
+            "value_type": "cumulative",
+            "shared": false
+          },
+          "targets": [
+            {
+              "function": "mean",
+              "column": "uss",
+              "series": "Suites.Memory.FM Radio.fullyLoadedMemory",
+              "query": "select mean(uss) from \"Suites.Memory.FM Radio.fullyLoadedMemory\" where $timeFilter group by time($interval) order asc",
+              "alias": "USS"
+            },
+            {
+              "function": "mean",
+              "column": "pss",
+              "series": "Suites.Memory.FM Radio.fullyLoadedMemory",
+              "query": "select mean(pss) from \"Suites.Memory.FM Radio.fullyLoadedMemory\" where $timeFilter group by time($interval) order asc",
+              "alias": "PSS"
+            },
+            {
+              "function": "mean",
+              "column": "rss",
+              "series": "Suites.Memory.FM Radio.fullyLoadedMemory",
+              "query": "select mean(rss) from \"Suites.Memory.FM Radio.fullyLoadedMemory\" where $timeFilter group by time($interval) order asc",
+              "alias": "PSS"
+            }
+          ],
+          "aliasColors": {},
+          "seriesOverrides": [],
+          "links": [],
+          "height": "300px",
+          "leftYAxisLabel": "MB"
+        }
+      ]
+    },
+    {
+      "title": "Row1",
+      "height": "250px",
+      "editable": true,
+      "collapse": false,
+      "panels": [
+        {
+          "title": "Gallery",
+          "error": false,
+          "span": 4,
+          "editable": true,
+          "type": "graph",
+          "id": 7,
+          "datasource": null,
+          "renderer": "flot",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "none",
+            "none"
+          ],
+          "grid": {
+            "leftMax": null,
+            "rightMax": null,
+            "leftMin": 0,
+            "rightMin": null,
+            "threshold1": null,
+            "threshold2": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "lines": true,
+          "fill": 1,
+          "linewidth": 2,
+          "points": false,
+          "pointradius": 2,
+          "bars": false,
+          "stack": false,
+          "percentage": false,
+          "legend": {
+            "show": true,
+            "values": false,
+            "min": false,
+            "max": false,
+            "current": false,
+            "total": false,
+            "avg": false
+          },
+          "nullPointMode": "connected",
+          "steppedLine": false,
+          "tooltip": {
+            "value_type": "cumulative",
+            "shared": false
+          },
+          "targets": [
+            {
+              "function": "mean",
+              "column": "uss",
+              "series": "Suites.Memory.Gallery.fullyLoadedMemory",
+              "query": "select mean(uss) from \"Suites.Memory.Gallery.fullyLoadedMemory\" where $timeFilter group by time($interval) order asc",
+              "alias": "USS"
+            },
+            {
+              "function": "mean",
+              "column": "pss",
+              "series": "Suites.Memory.Gallery.fullyLoadedMemory",
+              "query": "select mean(pss) from \"Suites.Memory.Gallery.fullyLoadedMemory\" where $timeFilter group by time($interval) order asc",
+              "alias": "PSS"
+            },
+            {
+              "function": "mean",
+              "column": "rss",
+              "series": "Suites.Memory.Gallery.fullyLoadedMemory",
+              "query": "select mean(rss) from \"Suites.Memory.Gallery.fullyLoadedMemory\" where $timeFilter group by time($interval) order asc",
+              "alias": "PSS"
+            }
+          ],
+          "aliasColors": {},
+          "seriesOverrides": [],
+          "links": [],
+          "height": "300px",
+          "leftYAxisLabel": "MB"
+        },
+        {
+          "title": "Messages",
+          "error": false,
+          "span": 4,
+          "editable": true,
+          "type": "graph",
+          "id": 8,
+          "datasource": null,
+          "renderer": "flot",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "none",
+            "none"
+          ],
+          "grid": {
+            "leftMax": null,
+            "rightMax": null,
+            "leftMin": 0,
+            "rightMin": null,
+            "threshold1": null,
+            "threshold2": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "lines": true,
+          "fill": 1,
+          "linewidth": 2,
+          "points": false,
+          "pointradius": 2,
+          "bars": false,
+          "stack": false,
+          "percentage": false,
+          "legend": {
+            "show": true,
+            "values": false,
+            "min": false,
+            "max": false,
+            "current": false,
+            "total": false,
+            "avg": false
+          },
+          "nullPointMode": "connected",
+          "steppedLine": false,
+          "tooltip": {
+            "value_type": "cumulative",
+            "shared": false
+          },
+          "targets": [
+            {
+              "function": "mean",
+              "column": "uss",
+              "series": "Suites.Memory.Messages.fullyLoadedMemory",
+              "query": "select mean(uss) from \"Suites.Memory.Messages.fullyLoadedMemory\" where $timeFilter group by time($interval) order asc",
+              "alias": "USS"
+            },
+            {
+              "function": "mean",
+              "column": "pss",
+              "series": "Suites.Memory.Messages.fullyLoadedMemory",
+              "query": "select mean(pss) from \"Suites.Memory.Messages.fullyLoadedMemory\" where $timeFilter group by time($interval) order asc",
+              "alias": "PSS"
+            },
+            {
+              "function": "mean",
+              "column": "rss",
+              "series": "Suites.Memory.Messages.fullyLoadedMemory",
+              "query": "select mean(rss) from \"Suites.Memory.Messages.fullyLoadedMemory\" where $timeFilter group by time($interval) order asc",
+              "alias": "PSS"
+            }
+          ],
+          "aliasColors": {},
+          "seriesOverrides": [],
+          "links": [],
+          "height": "300px",
+          "leftYAxisLabel": "MB"
+        },
+        {
+          "title": "Music",
+          "error": false,
+          "span": 4,
+          "editable": true,
+          "type": "graph",
+          "id": 9,
+          "datasource": null,
+          "renderer": "flot",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "none",
+            "none"
+          ],
+          "grid": {
+            "leftMax": null,
+            "rightMax": null,
+            "leftMin": 0,
+            "rightMin": null,
+            "threshold1": null,
+            "threshold2": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "lines": true,
+          "fill": 1,
+          "linewidth": 2,
+          "points": false,
+          "pointradius": 2,
+          "bars": false,
+          "stack": false,
+          "percentage": false,
+          "legend": {
+            "show": true,
+            "values": false,
+            "min": false,
+            "max": false,
+            "current": false,
+            "total": false,
+            "avg": false
+          },
+          "nullPointMode": "connected",
+          "steppedLine": false,
+          "tooltip": {
+            "value_type": "cumulative",
+            "shared": false
+          },
+          "targets": [
+            {
+              "function": "mean",
+              "column": "uss",
+              "series": "Suites.Memory.Music.fullyLoadedMemory",
+              "query": "select mean(uss) from \"Suites.Memory.Music.fullyLoadedMemory\" where $timeFilter group by time($interval) order asc",
+              "alias": "USS"
+            },
+            {
+              "function": "mean",
+              "column": "pss",
+              "series": "Suites.Memory.Music.fullyLoadedMemory",
+              "query": "select mean(pss) from \"Suites.Memory.Music.fullyLoadedMemory\" where $timeFilter group by time($interval) order asc",
+              "alias": "PSS"
+            },
+            {
+              "function": "mean",
+              "column": "rss",
+              "series": "Suites.Memory.Music.fullyLoadedMemory",
+              "query": "select mean(rss) from \"Suites.Memory.Music.fullyLoadedMemory\" where $timeFilter group by time($interval) order asc",
+              "alias": "PSS"
+            }
+          ],
+          "aliasColors": {},
+          "seriesOverrides": [],
+          "links": [],
+          "height": "300px",
+          "leftYAxisLabel": "MB"
+        }
+      ]
+    },
+    {
+      "title": "Row1",
+      "height": "250px",
+      "editable": true,
+      "collapse": false,
+      "panels": [
+        {
+          "title": "Phone",
+          "error": false,
+          "span": 4,
+          "editable": true,
+          "type": "graph",
+          "id": 10,
+          "datasource": null,
+          "renderer": "flot",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "none",
+            "none"
+          ],
+          "grid": {
+            "leftMax": null,
+            "rightMax": null,
+            "leftMin": 0,
+            "rightMin": null,
+            "threshold1": null,
+            "threshold2": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "lines": true,
+          "fill": 1,
+          "linewidth": 2,
+          "points": false,
+          "pointradius": 2,
+          "bars": false,
+          "stack": false,
+          "percentage": false,
+          "legend": {
+            "show": true,
+            "values": false,
+            "min": false,
+            "max": false,
+            "current": false,
+            "total": false,
+            "avg": false
+          },
+          "nullPointMode": "connected",
+          "steppedLine": false,
+          "tooltip": {
+            "value_type": "cumulative",
+            "shared": false
+          },
+          "targets": [
+            {
+              "function": "mean",
+              "column": "uss",
+              "series": "Suites.Memory.Phone.fullyLoadedMemory",
+              "query": "select mean(uss) from \"Suites.Memory.Phone.fullyLoadedMemory\" where $timeFilter group by time($interval) order asc",
+              "alias": "USS"
+            },
+            {
+              "function": "mean",
+              "column": "pss",
+              "series": "Suites.Memory.Phone.fullyLoadedMemory",
+              "query": "select mean(pss) from \"Suites.Memory.Phone.fullyLoadedMemory\" where $timeFilter group by time($interval) order asc",
+              "alias": "PSS"
+            },
+            {
+              "function": "mean",
+              "column": "rss",
+              "series": "Suites.Memory.Phone.fullyLoadedMemory",
+              "query": "select mean(rss) from \"Suites.Memory.Phone.fullyLoadedMemory\" where $timeFilter group by time($interval) order asc",
+              "alias": "PSS"
+            }
+          ],
+          "aliasColors": {},
+          "seriesOverrides": [],
+          "links": [],
+          "height": "300px",
+          "leftYAxisLabel": "MB"
+        },
+        {
+          "title": "Settings",
+          "error": false,
+          "span": 4,
+          "editable": true,
+          "type": "graph",
+          "id": 11,
+          "datasource": null,
+          "renderer": "flot",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "none",
+            "none"
+          ],
+          "grid": {
+            "leftMax": null,
+            "rightMax": null,
+            "leftMin": 0,
+            "rightMin": null,
+            "threshold1": null,
+            "threshold2": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "lines": true,
+          "fill": 1,
+          "linewidth": 2,
+          "points": false,
+          "pointradius": 2,
+          "bars": false,
+          "stack": false,
+          "percentage": false,
+          "legend": {
+            "show": true,
+            "values": false,
+            "min": false,
+            "max": false,
+            "current": false,
+            "total": false,
+            "avg": false
+          },
+          "nullPointMode": "connected",
+          "steppedLine": false,
+          "tooltip": {
+            "value_type": "cumulative",
+            "shared": false
+          },
+          "targets": [
+            {
+              "function": "mean",
+              "column": "uss",
+              "series": "Suites.Memory.Settings.fullyLoadedMemory",
+              "query": "select mean(uss) from \"Suites.Memory.Settings.fullyLoadedMemory\" where $timeFilter group by time($interval) order asc",
+              "alias": "USS"
+            },
+            {
+              "function": "mean",
+              "column": "pss",
+              "series": "Suites.Memory.Settings.fullyLoadedMemory",
+              "query": "select mean(pss) from \"Suites.Memory.Settings.fullyLoadedMemory\" where $timeFilter group by time($interval) order asc",
+              "alias": "PSS"
+            },
+            {
+              "function": "mean",
+              "column": "rss",
+              "series": "Suites.Memory.Settings.fullyLoadedMemory",
+              "query": "select mean(rss) from \"Suites.Memory.Settings.fullyLoadedMemory\" where $timeFilter group by time($interval) order asc",
+              "alias": "PSS"
+            }
+          ],
+          "aliasColors": {},
+          "seriesOverrides": [],
+          "links": [],
+          "height": "300px",
+          "leftYAxisLabel": "MB"
+        },
+        {
+          "title": "Usage",
+          "error": false,
+          "span": 4,
+          "editable": true,
+          "type": "graph",
+          "id": 12,
+          "datasource": null,
+          "renderer": "flot",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "none",
+            "none"
+          ],
+          "grid": {
+            "leftMax": null,
+            "rightMax": null,
+            "leftMin": 0,
+            "rightMin": null,
+            "threshold1": null,
+            "threshold2": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "lines": true,
+          "fill": 1,
+          "linewidth": 2,
+          "points": false,
+          "pointradius": 2,
+          "bars": false,
+          "stack": false,
+          "percentage": false,
+          "legend": {
+            "show": true,
+            "values": false,
+            "min": false,
+            "max": false,
+            "current": false,
+            "total": false,
+            "avg": false
+          },
+          "nullPointMode": "connected",
+          "steppedLine": false,
+          "tooltip": {
+            "value_type": "cumulative",
+            "shared": false
+          },
+          "targets": [
+            {
+              "function": "mean",
+              "column": "uss",
+              "series": "Suites.Memory.Usage.fullyLoadedMemory",
+              "query": "select mean(uss) from \"Suites.Memory.Usage.fullyLoadedMemory\" where $timeFilter group by time($interval) order asc",
+              "alias": "USS"
+            },
+            {
+              "function": "mean",
+              "column": "pss",
+              "series": "Suites.Memory.Usage.fullyLoadedMemory",
+              "query": "select mean(pss) from \"Suites.Memory.Usage.fullyLoadedMemory\" where $timeFilter group by time($interval) order asc",
+              "alias": "PSS"
+            },
+            {
+              "function": "mean",
+              "column": "rss",
+              "series": "Suites.Memory.Usage.fullyLoadedMemory",
+              "query": "select mean(rss) from \"Suites.Memory.Usage.fullyLoadedMemory\" where $timeFilter group by time($interval) order asc",
+              "alias": "PSS"
+            }
+          ],
+          "aliasColors": {},
+          "seriesOverrides": [],
+          "links": [],
+          "height": "300px",
+          "leftYAxisLabel": "MB"
+        }
+      ]
+    },
+    {
+      "title": "Row1",
+      "height": "250px",
+      "editable": true,
+      "collapse": false,
+      "panels": [
+        {
+          "title": "Video",
+          "error": false,
+          "span": 4,
+          "editable": true,
+          "type": "graph",
+          "id": 13,
+          "datasource": null,
+          "renderer": "flot",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "none",
+            "none"
+          ],
+          "grid": {
+            "leftMax": null,
+            "rightMax": null,
+            "leftMin": 0,
+            "rightMin": null,
+            "threshold1": null,
+            "threshold2": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "lines": true,
+          "fill": 1,
+          "linewidth": 2,
+          "points": false,
+          "pointradius": 2,
+          "bars": false,
+          "stack": false,
+          "percentage": false,
+          "legend": {
+            "show": true,
+            "values": false,
+            "min": false,
+            "max": false,
+            "current": false,
+            "total": false,
+            "avg": false
+          },
+          "nullPointMode": "connected",
+          "steppedLine": false,
+          "tooltip": {
+            "value_type": "cumulative",
+            "shared": false
+          },
+          "targets": [
+            {
+              "function": "mean",
+              "column": "uss",
+              "series": "Suites.Memory.Video.fullyLoadedMemory",
+              "query": "select mean(uss) from \"Suites.Memory.Video.fullyLoadedMemory\" where $timeFilter group by time($interval) order asc",
+              "alias": "USS"
+            },
+            {
+              "function": "mean",
+              "column": "pss",
+              "series": "Suites.Memory.Video.fullyLoadedMemory",
+              "query": "select mean(pss) from \"Suites.Memory.Video.fullyLoadedMemory\" where $timeFilter group by time($interval) order asc",
+              "alias": "PSS"
+            },
+            {
+              "function": "mean",
+              "column": "rss",
+              "series": "Suites.Memory.Video.fullyLoadedMemory",
+              "query": "select mean(rss) from \"Suites.Memory.Video.fullyLoadedMemory\" where $timeFilter group by time($interval) order asc",
+              "alias": "PSS"
+            }
+          ],
+          "aliasColors": {},
+          "seriesOverrides": [],
+          "links": [],
+          "height": "300px",
+          "leftYAxisLabel": "MB"
+        }
+      ]
+    }
+  ],
+  "nav": [
+    {
+      "type": "timepicker",
+      "enable": true,
+      "status": "Stable",
+      "time_options": [
+        "5m",
+        "15m",
+        "1h",
+        "6h",
+        "12h",
+        "24h",
+        "2d",
+        "7d",
+        "30d"
+      ],
+      "refresh_intervals": [
+        "5s",
+        "10s",
+        "30s",
+        "1m",
+        "5m",
+        "15m",
+        "30m",
+        "1h",
+        "2h",
+        "1d"
+      ],
+      "now": true,
+      "collapse": false,
+      "notice": false
+    }
+  ],
+  "time": {
+    "from": "now-24h",
+    "to": "now"
+  },
+  "templating": {
+    "list": []
+  },
+  "annotations": {
+    "list": []
+  },
+  "refresh": false,
+  "version": 6,
+  "hideAllLegends": false
+}
