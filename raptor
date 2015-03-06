@@ -26,4 +26,6 @@ elif [[ $1 == "remove" ]]; then
   echo "Raptor container removed"
 elif [[ $1 == "push" ]]; then
   docker push eliperelman/raptor
+else
+  echo "Unknown command argument: $1"
 fi

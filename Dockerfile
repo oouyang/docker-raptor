@@ -1,8 +1,8 @@
 FROM tutum/curl:trusty
 MAINTAINER Eli Perelman <eli@mozilla.com>
 
-ENV INFLUXDB_VERSION 0.8.6
-ENV GRAFANA_VERSION 1.9.0-rc1
+ENV INFLUXDB_VERSION 0.8.8
+ENV GRAFANA_VERSION 1.9.1
 ENV DEBIAN_FRONTEND noninteractive
 ENV PRE_CREATE_DB raptor;grafana
 

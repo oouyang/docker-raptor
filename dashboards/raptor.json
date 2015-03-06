@@ -5,7 +5,7 @@
   "tags": [],
   "style": "dark",
   "timezone": "browser",
-  "editable": true,
+  "editable": false,
   "hideControls": false,
   "sharedCrosshair": false,
   "rows": [
@@ -17,13 +17,13 @@
       "panels": [
         {
           "id": 1,
-          "span": 12,
+          "span": 2,
           "editable": true,
           "type": "text",
-          "mode": "html",
-          "content": "<link href=\"http://fonts.googleapis.com/css?family=Cinzel:400,900,700\" rel=\"stylesheet\">\n<style>\n.raptor-header {\n  padding-top: 15px;\n  font-family: Cinzel;\n  text-align: center;\n}\n.raptor-header h1 {\n  font-weight: 900;\n}\n.raptor-header h3 {\n  font-weight: 400;\n}\n.raptor-content {\n  font-size: 18px;\n}\n</style>\n<div class=\"raptor-header\">\n  <h1>RAPTOR</h1>\n  <h3>Performance Visualization</h3>\n</div>\n<hr/>\n\n<div class=\"raptor-content\">\n  <ul>\n    <li><a href=\"/#/dashboard/file/cold-launch.json\">Cold Launch</a></li>\n    <li><a href=\"/#/dashboard/file/reboot.json\">Reboot</a></li>\n    <li><a href=\"/#/dashboard/file/memory.json\">Memory</a></li>\n  </ul>\n</div>",
+          "mode": "markdown",
+          "content": "##### *Cold Launch*\n\n* [Marks](#/dashboard/script/mark.js?device=flame-kk&branch=master&memory=319&suite=coldlaunch)\n* [Measures](#/dashboard/script/measure.js?device=flame-kk&branch=master&memory=319&suite=coldlaunch)\n* [Memory](#/dashboard/script/memory.js?device=flame-kk&branch=master&memory=319&suite=coldlaunch)",
           "style": {},
-          "title": "",
+          "title": "flame-kk | 319MB | master",
           "links": []
         }
       ],
