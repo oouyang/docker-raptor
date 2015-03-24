@@ -64,7 +64,7 @@
     }
   ],
   "time": {
-    "from": "now-6h",
+    "from": "now-24h",
     "to": "now"
   },
   "templating": {
@@ -73,6 +73,6 @@
   "annotations": {
     "list": []
   },
-  "version": 6,
+  "version": 7,
   "hideAllLegends": false
 }

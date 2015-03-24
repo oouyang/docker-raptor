@@ -29,7 +29,7 @@ RUN wget http://grafanarel.s3.amazonaws.com/grafana-${GRAFANA_VERSION}.tar.gz -O
     mv grafana-${GRAFANA_VERSION} app
 
 ADD config.js /app/config.js
-ADD dashboards/* /app/app/dashboards/
+ADD dashboards/ /app/app/dashboards/
 
 # Clean up
 RUN apt-get clean && \

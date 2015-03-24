@@ -13,6 +13,14 @@ var title = [
   settings.memory + 'MB',
   settings.branch
 ].join(' | ');
+var annotationQuery = [
+  "select title, tags, text",
+  "from events",
+  "where device='" + settings.device + "'",
+  "and memory='" + settings.memory + "'",
+  "and branch='" + settings.branch + "'",
+  "and $timeFilter"
+].join(' ');
 var dashboard = {
   id: 10,
   rows: [],
@@ -64,11 +72,24 @@ var dashboard = {
   templating: {
     list: []
   },
-  annotations: {
-    list: []
+  "annotations": {
+    "list": [{
+      "name": "Revisions",
+      "datasource": "raptor",
+      "showLine": false,
+      "iconColor": "rgb(90, 150, 197)",
+      "lineColor": "rgba(255, 96, 96, 0.592157)",
+      "iconSize": 13,
+      "enable": true,
+      "query": annotationQuery,
+      "titleColumn": "title",
+      "tagsColumn": "tags",
+      "textColumn": "text"
+    }],
+    "enable": true
   },
   refresh: false,
-  version: 6,
+  version: 7,
   hideAllLegends: false
 };
 var basePanel = {
@@ -115,7 +136,7 @@ var basePanel = {
   steppedLine: false,
   tooltip: {
     value_type: 'cumulative',
-    shared: false
+    shared: true
   },
   aliasColors: {},
   seriesOverrides: [],
