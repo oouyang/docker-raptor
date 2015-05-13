@@ -3,12 +3,11 @@
 var ARGS;
 var settings = _.extend({
   device: 'flame-kk',
-  memory: '319',
-  branch: 'master',
-  suite: 'coldlaunch'
+  memory: '1024',
+  branch: 'master'
 }, ARGS);
 var title = [
-  'Cold Launch: Marks',
+  'Power: Current',
   settings.device,
   settings.memory + 'MB',
   settings.branch
@@ -22,7 +21,7 @@ var annotationQuery = [
   "and $timeFilter"
 ].join(' ');
 var dashboard = {
-  id: 10,
+  id: 11,
   rows: [],
   title: title,
   originalTitle: title,
@@ -102,7 +101,7 @@ var basePanel = {
   'x-axis': true,
   'y-axis': true,
   y_formats: [
-    'ms',
+    'none',
     'none'
   ],
   grid: {
@@ -142,81 +141,70 @@ var basePanel = {
   seriesOverrides: [],
   links: [],
   height: '300px',
-  leftYAxisLabel: 'Duration, 95th Percentile'
+  leftYAxisLabel: 'mA, average'
 };
-var apps = [
-  ['Calendar', 'calendar.gaiamobile.org'],
-  ['Camera', 'camera.gaiamobile.org'],
-  ['Clock', 'clock.gaiamobile.org'],
-  ['Contacts', 'communications.gaiamobile.org'],
-  ['E-Mail', 'email.gaiamobile.org'],
-  ['FM Radio', 'fm.gaiamobile.org'],
-  ['Gallery', 'gallery.gaiamobile.org'],
-  ['Messages', 'sms.gaiamobile.org'],
-  ['Music', 'music.gaiamobile.org'],
-  ['Phone', 'communications.gaiamobile.org'],
-  ['Settings', 'settings.gaiamobile.org'],
-  //['Usage', 'costcontrol.gaiamobile.org'],
-  ['Video', 'video.gaiamobile.org'],
-  ['Test Startup Limit', 'test-startup-limit.gaiamobile.org']
-];
-
-var rows = Math.ceil(apps.length / 3);
 
 var query = function(series, context, appName) {
   return [
-    "select percentile(value, 95)",
-    "from /" + series + "/",
+    "select mean(value)",
+    "from " + series,
     "where device='" + settings.device + "'",
-    "and memory='" + settings.memory + "'",
+    "and memory=" + settings.memory + "",
     "and branch='" + settings.branch + "'",
     "and context='" + context + "'",
     "and appName='" + appName + "'",
-    "and entryType='mark'",
+    "and entryType='current'",
     "and $timeFilter",
     "group by time($interval)",
     "order asc"
   ].join(' ');
 };
 
-for (var i = 1; i <= rows; i++) {
-
-  var row = {
-    title: 'Row ' + i,
-    height: '250px',
-    editable: false,
-    collapse: false,
-    panels: []
-  };
-
-  var ordinal = i * 3;
-
-  for (var o = ordinal - 3; o < ordinal; o++) {
-    if (o + 1 > apps.length) {
-      break;
-    }
-
-    var app = apps[o];
-    var appName = app[0];
-    var context = app[1];
-
-    var panel = _.extend({
-      id: o + 1,
-      title: appName,
+var row = {
+  title: 'Row 1',
+  height: '250px',
+  editable: false,
+  collapse: false,
+  panels: [
+    _.extend({
+      id: 1,
+      title: 'Camera Preview',
       targets: [{
         rawQuery: true,
-        'function': 'percentile',
+        'function': 'mean',
         column: 'value',
-        series: settings.suite + '.*',
-        query: query(settings.suite + '.*', context, appName),
-        alias: '$1'
+        series: 'power.camera_preview.current',
+        query: query('power.camera_preview.current', 'camera.gaiamobile.org', 'Camera'),
+        alias: 'current'
       }]
-    }, basePanel);
+    }, basePanel),
+    _.extend({
+      id: 2,
+      title: 'Homescreen: Idle screen Off',
+      targets: [{
+        rawQuery: true,
+        'function': 'mean',
+        column: 'value',
+        series: 'power.idle_screen_off.current',
+        query: query('power.idle_screen_off.current', 'verticalhome.gaiamobile.org', 'Homescreen'),
+        alias: 'current'
+      }]
+    }, basePanel),
+    _.extend({
+      id: 3,
+      title: 'Homescreen: Idle screen On',
+      targets: [{
+        rawQuery: true,
+        'function': 'mean',
+        column: 'value',
+        series: 'power.idle_screen_on.current',
+        query: query('power.idle_screen_on.current', 'verticalhome.gaiamobile.org', 'Homescreen'),
+        alias: 'current'
+      }]
+    }, basePanel)
+  ]
+};
 
-    row.panels.push(panel);
-  }
-
-  dashboard.rows.push(row);
-}
+dashboard.rows.push(row);
 
 return dashboard;
