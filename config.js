@@ -7,13 +7,6 @@ define(['settings'], function (Settings) {
         url: 'http://' + window.location.hostname + ':8086/db/raptor',
         username: 'root',
         password: 'root'
-      },
-      grafana: {
-        type: 'influxdb',
-        url: 'http://' + window.location.hostname + ':8086/db/grafana',
-        username: 'root',
-        password: 'root',
-        grafanaDB: true
       }
     },
     default_route: '/dashboard/file/raptor.json',

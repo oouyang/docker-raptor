@@ -4,7 +4,7 @@ MAINTAINER Eli Perelman <eli@mozilla.com>
 ENV INFLUXDB_VERSION 0.8.8
 ENV GRAFANA_VERSION 1.9.1
 ENV DEBIAN_FRONTEND noninteractive
-ENV PRE_CREATE_DB raptor;grafana
+ENV PRE_CREATE_DB raptor
 
 # Install prerequisites
 RUN apt-get update && \

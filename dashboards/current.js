@@ -179,6 +179,30 @@ var row = {
       }]
     }, basePanel),
     _.extend({
+      id: 4,
+      title: 'Camera Picture',
+      targets: [{
+        rawQuery: true,
+        'function': 'mean',
+        column: 'value',
+        series: 'power.camera_picture.current',
+        query: query('power.camera_picture.current', 'camera.gaiamobile.org', 'Camera'),
+        alias: 'current'
+      }]
+    }, basePanel),
+    _.extend({
+      id: 5,
+      title: 'Camera Video',
+      targets: [{
+        rawQuery: true,
+        'function': 'mean',
+        column: 'value',
+        series: 'power.camera_video.current',
+        query: query('power.camera_video.current', 'camera.gaiamobile.org', 'Camera'),
+        alias: 'current'
+      }]
+    }, basePanel),
+    _.extend({
       id: 2,
       title: 'Homescreen: Idle screen Off',
       targets: [{
@@ -199,6 +223,54 @@ var row = {
         column: 'value',
         series: 'power.idle_screen_on.current',
         query: query('power.idle_screen_on.current', 'verticalhome.gaiamobile.org', 'Homescreen'),
+        alias: 'current'
+      }]
+    }, basePanel),
+    _.extend({
+      id: 6,
+      title: 'Music: Background Music Playback',
+      targets: [{
+        rawQuery: true,
+        'function': 'mean',
+        column: 'value',
+        series: 'power.background_music_playback.current',
+        query: query('power.background_music_playback.current', 'music.gaiamobile.org', 'Music'),
+        alias: 'current'
+      }]
+    }, basePanel),
+    _.extend({
+      id: 8,
+      title: 'Music: Playback',
+      targets: [{
+        rawQuery: true,
+        'function': 'mean',
+        column: 'value',
+        series: 'power.music_playback.current',
+        query: query('power.music_playback.current', 'music.gaiamobile.org', 'Music'),
+        alias: 'current'
+      }]
+    }, basePanel),
+    _.extend({
+      id: 7,
+      title: 'Video: Video Playback',
+      targets: [{
+        rawQuery: true,
+        'function': 'mean',
+        column: 'value',
+        series: 'power.video_playback.current',
+        query: query('power.video_playback.current', 'video.gaiamobile.org', 'Video'),
+        alias: 'current'
+      }]
+    }, basePanel),
+    _.extend({
+      id: 9,
+      title: 'Video: Background Video Playback',
+      targets: [{
+        rawQuery: true,
+        'function': 'mean',
+        column: 'value',
+        series: 'power.background_video_playback.current',
+        query: query('power.background_video_playback.current', 'video.gaiamobile.org', 'Video'),
         alias: 'current'
       }]
     }, basePanel)

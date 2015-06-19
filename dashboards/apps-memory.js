@@ -156,9 +156,9 @@ var apps = [
   ['Music', 'music.gaiamobile.org'],
   ['Phone', 'communications.gaiamobile.org'],
   ['Settings', 'settings.gaiamobile.org'],
-  //['Usage', 'costcontrol.gaiamobile.org'],
   ['Video', 'video.gaiamobile.org'],
   ['Test Startup Limit', 'test-startup-limit.gaiamobile.org']
+  //['Usage', 'costcontrol.gaiamobile.org'],
 ];
 
 var rows = Math.ceil(apps.length / 3);
