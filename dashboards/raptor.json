@@ -17,7 +17,7 @@
       "panels": [
         {
           "id": 1,
-          "span": 3,
+          "span": 4,
           "editable": true,
           "type": "text",
           "mode": "markdown",
@@ -28,7 +28,7 @@
         },
         {
           "id": 2,
-          "span": 3,
+          "span": 4,
           "editable": true,
           "type": "text",
           "mode": "markdown",
@@ -39,13 +39,46 @@
         },
         {
           "id": 3,
-          "span": 3,
+          "span": 4,
           "editable": true,
           "type": "text",
           "mode": "markdown",
           "content": "* [Cold Launch Times](#/dashboard/script/apps.js?device=flame-kk&branch=master&memory=1024&series=coldlaunch.*)\n* [Cold Launch Memory](#/dashboard/script/apps-memory.js?device=flame-kk&branch=master&memory=1024)\n* [Reboot Times](#/dashboard/script/core.js?device=flame-kk&branch=master&memory=1024&series=reboot.*)\n* [Current](#/dashboard/script/current.js?device=flame-kk&branch=master&memory=1024)",
           "style": {},
           "title": "flame-kk | 1GB | master",
+          "links": []
+        },
+        {
+          "id": 4,
+          "span": 4,
+          "editable": true,
+          "type": "text",
+          "mode": "markdown",
+          "content": "* [Cold Launch Times](#/dashboard/script/apps.js?device=aries&branch=master&memory=512&series=coldlaunch.*)\n* [Cold Launch Memory](#/dashboard/script/apps-memory.js?device=aries&branch=master&memory=512)\n* [Reboot Times](#/dashboard/script/core.js?device=aries&branch=master&memory=512&series=reboot.*)",
+          "style": {},
+          "title": "aries | 512MB | master",
+          "links": []
+        },
+        {
+          "id": 5,
+          "span": 4,
+          "editable": true,
+          "type": "text",
+          "mode": "markdown",
+          "content": "* [Cold Launch Times](#/dashboard/script/apps.js?device=aries&branch=master&memory=1024&series=coldlaunch.*)\n* [Cold Launch Memory](#/dashboard/script/apps-memory.js?device=aries&branch=master&memory=1024)\n* [Reboot Times](#/dashboard/script/core.js?device=aries&branch=master&memory=1024&series=reboot.*)",
+          "style": {},
+          "title": "aries | 1GB | master",
+          "links": []
+        },
+        {
+          "id": 6,
+          "span": 4,
+          "editable": true,
+          "type": "text",
+          "mode": "markdown",
+          "content": "* [Cold Launch Times](#/dashboard/script/apps.js?device=aries&branch=master&memory=2048&series=coldlaunch.*)\n* [Cold Launch Memory](#/dashboard/script/apps-memory.js?device=aries&branch=master&memory=2048)\n* [Reboot Times](#/dashboard/script/core.js?device=aries&branch=master&memory=2048&series=reboot.*)\n* [Current](#/dashboard/script/current.js?device=aries&branch=master&memory=2048)",
+          "style": {},
+          "title": "aries | 2GB | master",
           "links": []
         }
       ],
