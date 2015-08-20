@@ -1,23 +1,26 @@
 raptor:
-  image:quay.io/oouyang/raptor
+  image: "quay.io/oouyang/raptor"
   links:
-    - nginx
-    - influxdb
-    - 'redis:redisio'
-nginx:
-  image: tutum/nginx
-  ports:
-    - 8181:80
+    - raptor-nginx
+    - raptor-influxdb
+    - "redis:redisio"
   volumes:
-    - '/srv/docker/raptor/app:/app’
-influxdb:
-  image: tutum/influxdb:0.8.8
+    - "/srv/docker/raptor/app:/app"
+    - "/srv/docker/raptor/data:/data"
+raptor-nginx:
+  image: "tutum/nginx"
+  ports:
+    - "8081:80"
+  volumes:
+    - "/srv/docker/raptor/app:/app"
+raptor-influxdb:
+  image: "tutum/influxdb:0.8.8"
   ports:
    - "8083:8083"
    - "8086:8086"
   volumes:
-    - '/srv/docker/raptor/data:/data'
+    - "/srv/docker/raptor/data:/data"
 redis:
-  image: 'sameersbn/redis:latest'
+  image: "sameersbn/redis:latest"
   volumes:
-    - '/srv/docker/gitlab/redis:/var/lib/redis'
+    - "/srv/docker/gitlab/redis:/var/lib/redis"
