@@ -2,6 +2,7 @@ docker-raptor
 =====================
 Grafana and InfluxDB image for Raptor visualization
 
+[![Deploy to Tutum](https://s.tutum.co/deploy-to-tutum.svg)](https://dashboard.tutum.co/stack/deploy/)
 
 Usage
 -----
