@@ -1,9 +1,9 @@
-raptor:
+raptor-mercury:
   image: "quay.io/oouyang/raptor"
   links:
     - raptor-nginx
     - raptor-influxdb
-    - "redis:redisio"
+    - "raptor-redis:redisio"
   volumes:
     - "/srv/docker/raptor/app:/app"
     - "/srv/docker/raptor/data:/data"
@@ -20,7 +20,7 @@ raptor-influxdb:
    - "8086:8086"
   volumes:
     - "/srv/docker/raptor/data:/data"
-redis:
+raptor-redis:
   image: "sameersbn/redis:latest"
   volumes:
-    - "/srv/docker/gitlab/redis:/var/lib/redis"
+    - "/srv/docker/raptor/redis:/var/lib/redis"
